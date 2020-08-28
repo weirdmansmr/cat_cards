@@ -1,0 +1,347 @@
+@charset "UTF-8";
+/* высота карты */
+/*угол карт*/
+/*Автор знаком с динамическим изменением, но так делать легче, когда известно точное количество*/
+/*обводка*/
+/*цвет обводки*/
+@font-face {
+  font-family: Exo;
+  /* Шрифт "заголовка" */
+  src: url(../fonts/exo-2-0.extra-light.otf); }
+@font-face {
+  font-family: Trebushet;
+  /* Шрифт карточек */
+  src: url(../fonts/TrebuchetMS.eot) format("eot"), url(../fonts/TrebuchetMS.ttf) format("ttf"), url(../fonts/TrebuchetMS.woff) format("woff"); }
+body {
+  /* Фон */
+  background-image: url(../images/Pattern@2x.png);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  margin: 0; }
+  body .shadow {
+    /* Затемнение фона */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5.0e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: -1; }
+
+.flexable {
+  /*выравнивание карт*/
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center; }
+
+/*отдельно для удобства*/
+.content {
+  /* Сначала моб версия */
+  margin: auto auto;
+  padding: 20px 0;
+  display: grid;
+  grid-template: [row1-start] "title" auto [row1-end] [row2-start] "card1" auto [row2-end] [row3-start] "card2" auto [row3-end] [row4-start] "card3" auto [row4-end]/1fr;
+  justify-items: center;
+  justify-content: center; }
+  .content .title {
+    /* Заголовок */
+    color: #fff;
+    font-weight: 200;
+    padding: 0 20px;
+    font-size: 36px;
+    font-family: Exo, sans-serif;
+    margin: 20px auto;
+    grid-column: 1/4;
+    text-align: center;
+    grid-area: title; }
+  .content .card_1 {
+    /* Фуа-гра */
+    grid-area: card1;
+    display: grid;
+    grid-template: [row1-start] "top1" auto [row1-end] [row2-start] "cont1" auto [row2-end] [row3-start] "bottom1" auto [row3-end]/1fr;
+    justify-items: center;
+    justify-content: center; }
+    .content .card_1 .card_top__1 {
+      grid-area: top1;
+      font-family: Trebushet, serif;
+      width: 328px;
+      height: 44px;
+      cursor: pointer;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      top: 20px;
+      border-radius: 0 10px 0 0; }
+      .content .card_1 .card_top__1 .corner {
+        display: block;
+        position: relative;
+        height: 44px;
+        width: 44px;
+        background: linear-gradient(-45deg, white, white 28.5px, #1698d9 0, #1698d9 32px, transparent 0); }
+      .content .card_1 .card_top__1 .card_text1 {
+        background-color: white;
+        display: block;
+        color: #666666;
+        border: 4px solid;
+        border-color: #1698d9;
+        border-bottom: 0;
+        border-left: 0;
+        flex-grow: 1;
+        margin: 0;
+        border-radius: 0 10px 0 0;
+        padding-top: 15px; }
+    .content .card_1 .container__1 {
+      grid-area: cont1;
+      background-color: white;
+      cursor: pointer;
+      height: 436px;
+      margin: 20px;
+      font-family: Trebushet, serif;
+      border-radius: 0 0 10px 10px;
+      border: 4px solid;
+      border-color: #1698d9;
+      border-top: 0;
+      position: relative;
+      overflow: hidden;
+      display: grid; }
+      .content .card_1 .container__1 .card_text2 {
+        padding-left: 40px;
+        font-weight: 700;
+        font-size: 50px;
+        margin: 0; }
+      .content .card_1 .container__1 .card_text3 {
+        padding-left: 40px;
+        font-weight: 700;
+        margin: 0; }
+      .content .card_1 .container__1 .card_text4 {
+        color: #666;
+        padding-left: 40px; }
+      .content .card_1 .container__1 .card_text5 {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 81px;
+        height: 81px;
+        background-color: #1698d9;
+        border-radius: 50%;
+        text-align: center; }
+        .content .card_1 .container__1 .card_text5 .kg {
+          position: relative;
+          top: 10px;
+          font-size: 42px;
+          color: white;
+          display: block; }
+        .content .card_1 .container__1 .card_text5 .kg__text {
+          font-size: 21px;
+          color: white; }
+      .content .card_1 .container__1 .image__cat {
+        position: inherit;
+        bottom: -3px; }
+    .content .card_1 .card_bottom__1 {
+      grid-area: bottom1;
+      font-family: Trebushet, serif;
+      color: white;
+      font-size: 13px; }
+      .content .card_1 .card_bottom__1 .buy {
+        text-decoration: none;
+        border-bottom: 1px dashed #1698d9;
+        color: #1698d9; }
+  .content .card_2 {
+    /* Рыба */
+    grid-area: card2;
+    display: grid;
+    grid-template: [row1-start] "top2" auto [row1-end] [row2-start] "cont2" auto [row2-end] [row3-start] "bottom2" auto [row3-end]/1fr;
+    justify-items: center;
+    justify-content: center; }
+    .content .card_2 .card_top__2 {
+      grid-area: top2;
+      font-family: Trebushet, serif;
+      width: 328px;
+      height: 44px;
+      cursor: pointer;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      top: 20px;
+      border-radius: 0 10px 0 0; }
+      .content .card_2 .card_top__2 .corner {
+        display: block;
+        position: relative;
+        height: 44px;
+        width: 44px;
+        background: linear-gradient(-45deg, white, white 28.5px, #1698d9 0, #1698d9 32px, transparent 0); }
+      .content .card_2 .card_top__2 .card_text1 {
+        background-color: white;
+        display: block;
+        color: #666666;
+        border: 4px solid;
+        border-color: #1698d9;
+        border-bottom: 0;
+        border-left: 0;
+        flex-grow: 1;
+        margin: 0;
+        border-radius: 0 10px 0 0;
+        padding-top: 15px; }
+    .content .card_2 .container__2 {
+      grid-area: cont2;
+      background-color: white;
+      cursor: pointer;
+      height: 436px;
+      margin: 20px;
+      font-family: Trebushet, serif;
+      border-radius: 0 0 10px 10px;
+      border: 4px solid;
+      border-color: #1698d9;
+      border-top: 0;
+      position: relative;
+      overflow: hidden;
+      display: grid; }
+      .content .card_2 .container__2 .card_text2 {
+        padding-left: 40px;
+        font-weight: 700;
+        font-size: 50px;
+        margin: 0; }
+      .content .card_2 .container__2 .card_text3 {
+        padding-left: 40px;
+        font-weight: 700;
+        margin: 0; }
+      .content .card_2 .container__2 .card_text4 {
+        color: #666;
+        padding-left: 40px; }
+      .content .card_2 .container__2 .card_text5 {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 81px;
+        height: 81px;
+        background-color: #1698d9;
+        border-radius: 50%;
+        text-align: center; }
+        .content .card_2 .container__2 .card_text5 .kg {
+          position: relative;
+          top: 10px;
+          font-size: 42px;
+          color: white;
+          display: block; }
+        .content .card_2 .container__2 .card_text5 .kg__text {
+          font-size: 21px;
+          color: white; }
+      .content .card_2 .container__2 .image__cat {
+        position: inherit;
+        bottom: -3px; }
+    .content .card_2 .card_bottom__2 {
+      grid-area: bottom2;
+      font-family: Trebushet, serif;
+      color: white;
+      font-size: 13px; }
+      .content .card_2 .card_bottom__2 .buy {
+        text-decoration: none;
+        border-bottom: 1px dashed #1698d9;
+        color: #1698d9; }
+  .content .card_3 {
+    /* Курица */
+    grid-area: card3;
+    display: grid;
+    grid-template: [row1-start] "top3" auto [row1-end] [row2-start] "cont3" auto [row2-end] [row3-start] "bottom3" auto [row3-end]/1fr;
+    justify-items: center;
+    justify-content: center; }
+    .content .card_3 .card_top__3 {
+      grid-area: top3;
+      font-family: Trebushet, serif;
+      width: 328px;
+      height: 44px;
+      cursor: pointer;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      top: 20px;
+      border-radius: 0 10px 0 0; }
+      .content .card_3 .card_top__3 .corner {
+        display: block;
+        position: relative;
+        height: 44px;
+        width: 44px;
+        background: linear-gradient(-45deg, white, white 28.5px, #1698d9 0, #1698d9 32px, transparent 0); }
+      .content .card_3 .card_top__3 .card_text1 {
+        background-color: white;
+        display: block;
+        color: #666666;
+        border: 4px solid;
+        border-color: #1698d9;
+        border-bottom: 0;
+        border-left: 0;
+        flex-grow: 1;
+        margin: 0;
+        border-radius: 0 10px 0 0;
+        padding-top: 15px; }
+    .content .card_3 .container__3 {
+      grid-area: cont3;
+      background-color: white;
+      cursor: pointer;
+      height: 436px;
+      margin: 20px;
+      font-family: Trebushet, serif;
+      border-radius: 0 0 10px 10px;
+      border: 4px solid;
+      border-color: #1698d9;
+      border-top: 0;
+      position: relative;
+      overflow: hidden;
+      display: grid; }
+      .content .card_3 .container__3 .card_text2 {
+        padding-left: 40px;
+        font-weight: 700;
+        font-size: 50px;
+        margin: 0; }
+      .content .card_3 .container__3 .card_text3 {
+        padding-left: 40px;
+        font-weight: 700;
+        margin: 0; }
+      .content .card_3 .container__3 .card_text4 {
+        color: #666;
+        padding-left: 40px; }
+      .content .card_3 .container__3 .card_text5 {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 81px;
+        height: 81px;
+        background-color: #1698d9;
+        border-radius: 50%;
+        text-align: center; }
+        .content .card_3 .container__3 .card_text5 .kg {
+          position: relative;
+          top: 10px;
+          font-size: 42px;
+          color: white;
+          display: block; }
+        .content .card_3 .container__3 .card_text5 .kg__text {
+          font-size: 21px;
+          color: white; }
+      .content .card_3 .container__3 .image__cat {
+        position: inherit;
+        bottom: 7px; }
+    .content .card_3 .card_bottom__3 {
+      grid-area: bottom3;
+      font-family: Trebushet, serif;
+      color: white;
+      font-size: 13px; }
+      .content .card_3 .card_bottom__3 .buy {
+        text-decoration: none;
+        border-bottom: 1px dashed #1698d9;
+        color: #1698d9; }
+
+@media screen and (min-width: 780px) and (max-width: 1024px) {
+  /*планшет*/
+  .content {
+    display: grid;
+    grid-template: [row1-start] "title title" auto [row1-end] [row2-start] "card1 card2" auto [row2-end] [row3-start] "card3 card3" auto [row3-end]/1fr 1fr; } }
+@media screen and (min-width: 1024px) {
+  /*десктоп*/
+  .content {
+    display: grid;
+    grid-template: [row1-start] "title title title" [row1-end] [row2-start] "card1 card2 card3" auto [row2-end]/1fr 1fr 1fr; } }
+
+/*# sourceMappingURL=style.css.map */
